@@ -1,0 +1,242 @@
+<html>
+<head>
+    <title>Neko Station</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="Style/CSS/index.css" th:href="@{/CSS/index.css}">
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<div class="modal-dialog text-center">
+    <div class="col-sm8 princ">
+        <div class="modal-content">
+            <div class="col-12 logo">
+                <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/Neko%20Logo.png" width="350">
+            </div>
+            <form class="col-12" id="datos">
+                <p> </p>
+                <h5>Precios por galón</h5>
+                <table class="table modal-dialog">
+                    <thead>
+                      <tr>
+                        <th scope="col-sm8">Super</th>
+                        <th scope="col-sm8">Regular</th>
+                        <th scope="col-sm8">Diesel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Q. 31.50</td>
+                        <td>Q. 30.70</td>
+                        <td>Q. 26.85</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              <form class="col-12" id="datos1">
+
+                <h3>Ingresa los datos de tu compra</h3>
+                <div class="input-group mb-3" >
+                  <form class="input-group mb-3" name="combustible" action="#" >
+                    <div class="input-group mb-3" >
+                      <label class="input-group-text" for="gas">Combustible</label>    
+                      <select class="form-select col-9" name="gas" id="gas" >
+                        <option selected>Seleccionar</option>
+                        <option value="1">Super</option>
+                        <option value="2">Regular</option>
+                        <option value="3">Diesel</option>
+                      </select>
+                    </div>
+                  <div class="input-group mb-3">
+                    <form class="input-group mb-3" action="#" name="cnt">
+                      <span class="input-group-text">Galones</span>
+                      <input type="number" class="form-control" placeholder="Ingrese la Cantidad" required id="gls">
+                    </form>
+                  </div>
+                  </form>
+                  <div class="col-12 mb-3" >
+                    <button type="button" class="btn btn-dark" name="pulsar" onclick="kamitwo()" 
+                    value="Cambiar tipo de letra">Calcular</button>
+                  </div> 
+                  <div class="input-group mb-0">
+                    <span class="input-group-text">Monto a Pagar Q.</span>
+                    <h3 class="form-control" placeholder="Monto a Pagar" id="texto"> </h3>
+                  </div>
+                </div>
+                
+                <form class="col-12" id="datos2">
+                  <h3>Forma de Pago</h3>
+                  <div class="accordion accordion" id="accordionExample">
+                    <div class="accordion-item col-12">
+                      <h5 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          <img src="https://www.pngfind.com/pngs/m/415-4153126_png-file-easy-money-icon-png-transparent-png.png" width="40px" class="rounded float-end">
+  
+                          Efectivo
+                        </button>
+                      </h5>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"> 
+                          <div class="input-group mb-3">
+                            <form class="input-group mb-3" action="#" name="cnt">
+                              <span class="input-group-text">Monto ingresado en Billetes</span>
+                              <input type="number" class="form-control" placeholder="Ingrese la Cantidad" required id="billete">
+                            </form>
+                          </div>
+                          </form>
+                          <div class="col-12 mb-3" >
+                            <button type="button" class="btn btn-dark" name="pulsar" onclick="vuelto()" 
+                            value="Cambiar tipo de letra">Calcular Vuelto</button>
+                          </div> 
+                          <div class="input-group mb-0">
+                            <span class="input-group-text">Monto de Vuelto Q.</span>
+                            <h3 class="form-control" placeholder="Monto a Pagar" id="calvul"> </h3>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+  
+                      <div class="accordion-item ">
+                        <h5 class="accordion-header" id="flush-headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <img src="https://www.pinclipart.com/picdir/middle/47-473533_download-tarjeta-icono-clipart-credit-card-computer-icono.png" width="40px" class="rounded float-end">
+  
+                            Tarjeta de Credito
+                          </button>
+                        </h5>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <div class="container">
+                              <h5 class="text-center col-sm-12">Ingresa los datos de tu Tarjeta</h5>
+                              <div class="first-row">
+                                  <div class="input-group mb-3">
+                                        <span class="input-group-text col-5">Nombre de la Tarjeta</span>
+                                        <input type="text" class="form-control col-7" placeholder="-----" required id="owner">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text col-3">Numero</span>
+                                    <input type="number" class="form-control col-6" placeholder="000-0000-000" required id="numb">
+                                      <span class="input-group-text col-2 ">CVC</span>
+                                      <input type="password" class="form-control col-2" placeholder="000" required id="cvc">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text col-4">Vencimiento</span>
+                                    <select class="form-control col-2" name="months" id="months">
+                                      <option value="Jan">01</option>
+                                      <option value="Feb">02</option>
+                                      <option value="Mar">03</option>
+                                      <option value="Apr">04</option>
+                                      <option value="May">05</option>
+                                      <option value="Jun">06</option>
+                                      <option value="Jul">07</option>
+                                      <option value="Aug">08</option>
+                                      <option value="Sep">09</option>
+                                      <option value="Oct">10</option>
+                                      <option value="Nov">11</option>
+                                      <option value="Dec">12</option>
+                                    </select>
+                                    <select class="form-control col-3" name="years" id="years">
+                                      <option value="2020">2021</option>
+                                      <option value="2019">2022</option>
+                                      <option value="2018">2023</option>
+                                      <option value="2017">2024</option>
+                                      <option value="2016">2025</option>
+                                      <option value="2015">2026</option>
+                                    </select>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/288px-Former_Visa_%28company%29_logo.svg.png" height="35px">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png" height="35px">
+
+                                  </div>
+                                  <div class="col-12 mb-3" >
+                                    <button type="button" class="btn btn-dark" name="pulsar" onclick="alert( wiuu(1,2) );" 
+                                    value="Cambiar tipo de letra">Realizar Pago</button>
+                                  </div> 
+
+                              </div>
+
+                              </div>
+                          </div>
+  
+  
+  
+                          </div>
+                        </div>
+                    </div>
+  
+                  </div>
+
+                </form>
+
+              </form>
+                
+                <script>
+                  function kamitwo(){
+
+                    var result;
+                    var gls = parseFloat(document.getElementById("gls").value);
+                    var gas = parseFloat(document.getElementById("gas").value);
+                
+                    if (gas="1"){
+                      result=gls*31.50
+                      escribe = document.getElementById("texto")
+                      escribe.innerHTML = result
+                    } else if (gas="2"){
+                      result=gls*30.70
+                      escribe = document.getElementById("texto")
+                      escribe.innerHTML = result
+                    } else if (gas="3"){
+                      result=gls*26.85
+                      escribe = document.getElementById("texto")
+                      escribe.innerHTML = result
+                    } else {
+                      alert("no se pudo weee")
+                    }
+                  }
+
+                  function vuelto() {
+                    var billete = document.getElementById("billete").value
+                    var result 
+                    var calvul;
+                    calvul = result - billete
+                    return calvul
+                  
+                    
+                    
+                  }
+
+                  var wiuu = function (owner, gls, result){
+                    var owner = document.getElementById("owner").value
+                    var gls = parseFloat(document.getElementById("gls").value);
+
+                    var result         
+                    
+
+                    var pagoExi = owner + " Su pago por el consumo de " + gls + " galones, por un total de: Q. " + result + " Fue Realizado con Exito";
+                    return pagoExi;
+                  }
+                
+               
+                </script>
+
+              
+
+                
+                
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+  
+</script>
+</body>
+
+</html>
